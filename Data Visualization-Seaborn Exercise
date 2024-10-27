@@ -1,0 +1,109 @@
+
+import warnings
+warnings.filterwarnings('ignore')
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+sns.set_style('whitegrid')
+
+titanic = sns.load_dataset('titanic')
+
+titanic.head()
+
+Exercise 1
+import warnings
+warnings.filterwarnings('ignore')
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+%matplotlib inline
+titanic = sns.load_dataset('titanic')
+sns.jointplot(x='fare', y='age', data = titanic)
+
+Exercise 2
+
+import warnings
+warnings.filterwarnings('ignore')
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+%matplotlib inline
+titanic = sns.load_dataset('titanic')
+# Drop NaN values in the 'fare' column
+titanic = titanic.dropna(subset=['fare'])
+# Create a subset DataFrame with only the 'fare' column
+fare_subset = titanic[['fare']]
+#Pattern and style
+sns.color_palette("flare")
+sns.set_style("whitegrid")
+# Create a figure and a single subplot
+fig, ax = plt.subplots(1, 1, figsize=(5, 5))
+# Plotting the histogram for the 'fare' column with 25 bins
+sns.histplot(data=fare_subset, x='fare', color='pink', bins=25, ax=ax)
+# Show the plot
+plt.show()
+
+
+==============================================Extra
+import warnings
+warnings.filterwarnings('ignore')
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+%matplotlib inline
+titanic = sns.load_dataset('titanic')
+sns.color_palette("flare")
+sns.set_style("whitegrid")
+fig, ax = plt.subplots(1, 1, figsize=(5, 5))
+
+ax=sns.histplot(x='fare', data = titanic, color = 'pink', ax=ax )
+ax=set_ylabel('')
+plt.show()
+
+=========================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Exercise 3
+import warnings
+warnings.filterwarnings('ignore')
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+%matplotlib inline
+titanic = sns.load_dataset('titanic')
+sns.boxplot()
+
+
+
+
+
+
+
+
+
+
+
+Exercize 7
+# import warnings
+warnings.filterwarnings('ignore')
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+%matplotlib inline
+titanic = sns.load_dataset('titanic')
+g=sns.FacetGrid(data = titanic, col = 'sex')
+g.map(plt.hist, 'age')
