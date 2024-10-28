@@ -1,18 +1,24 @@
 
+print('Done by Vera')
 import warnings
 warnings.filterwarnings('ignore')
 
+print('Done by Vera')
 import seaborn as sns
 import matplotlib.pyplot as plt
 %matplotlib inline
 
+print('Done by Vera')
 sns.set_style('whitegrid')
 
+print('Done by Vera')
 titanic = sns.load_dataset('titanic')
 
+print('Done by Vera')
 titanic.head()
 
 Exercise 1
+print('Done by Vera')
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -23,7 +29,7 @@ titanic = sns.load_dataset('titanic')
 sns.jointplot(x='fare', y='age', data = titanic)
 
 Exercise 2
-
+print('Done by Vera')
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -46,64 +52,89 @@ sns.histplot(data=fare_subset, x='fare', color='pink', bins=25, ax=ax)
 plt.show()
 
 
-==============================================Extra
+Exercise 3
+print('Done by Vera')
 import warnings
 warnings.filterwarnings('ignore')
-
+#import libraries
 import seaborn as sns
 import matplotlib.pyplot as plt
 %matplotlib inline
+#Isolate the titanic dataset
 titanic = sns.load_dataset('titanic')
-sns.color_palette("flare")
-sns.set_style("whitegrid")
-fig, ax = plt.subplots(1, 1, figsize=(5, 5))
-
-ax=sns.histplot(x='fare', data = titanic, color = 'pink', ax=ax )
-ax=set_ylabel('')
+# set up the boxplot
+sns.boxplot(x = 'class', y = 'age', data = titanic, palette = 'tab10')
+# Show the plot
 plt.show()
 
-=========================================================================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Exercise 3
+Exercise 4
+print('Done by Vera')
 import warnings
 warnings.filterwarnings('ignore')
-
+#import libraries
 import seaborn as sns
 import matplotlib.pyplot as plt
 %matplotlib inline
+#Isolate the titanic dataset
 titanic = sns.load_dataset('titanic')
-sns.boxplot()
+# set up the swarmplot
+sns.swarmplot(x = 'class', y = 'age', data = titanic, palette = 'Set2')
+# Show the plot
+plt.show()
 
+Exercise 5
+print('Done by Vera')
+import warnings
+warnings.filterwarnings('ignore')
+#import libraries
+import seaborn as sns
+import matplotlib.pyplot as plt
+%matplotlib inline
+#Isolate the titanic dataset
+titanic = sns.load_dataset('titanic')
+# change style
+sns.set_style('white')
+# set up the countplot
+sns.countplot(x = 'sex', data = titanic, palette='tab10')
+# Show the plot
+plt.show()
 
+Exercise 6
 
-
-
-
+print('Done by Vera')
+import warnings
+warnings.filterwarnings('ignore')
+#import libraries
+import seaborn as sns
+import matplotlib.pyplot as plt
+%matplotlib inline
+#Isolate the titanic dataset
+titanic = sns.load_dataset('titanic')
+# change into matrix form
+#titanic.pivot_table()
+# change style
+sns.set_style('ticks')
+# heatmap correlation
+sns.heatmap(titanic.corr(),cmap='coolwarm')
+# Show the plot
+plt.show()
 
 
 
 
 
 Exercize 7
+print('Done by Vera')
 # import warnings
 warnings.filterwarnings('ignore')
-
+# import libraries
 import seaborn as sns
 import matplotlib.pyplot as plt
 %matplotlib inline
+# get data set
 titanic = sns.load_dataset('titanic')
+#prepare FaceGrid
 g=sns.FacetGrid(data = titanic, col = 'sex')
+#show histogram
 g.map(plt.hist, 'age')
+plt.show()
