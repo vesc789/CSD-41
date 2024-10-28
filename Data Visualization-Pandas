@@ -1,0 +1,31 @@
+print ('Done by Vera')
+import pandas as pd
+import matplotlib.pyplot as plt
+df3 = pd.read_csv('data/df3')
+%matplotlib inline
+
+print ('Done by Vera')
+df3.info()
+
+print ('Done by Vera')
+df3.head()
+
+print ('Done by Vera')
+df3.plot.scatter(x='a', y='b', color ='r', edgecolor='black', xlim=(-0.2, 1.2),ylim=(-0.2, 1.2),s=50, figsize=(12,3))
+
+print ('Done by Vera')
+df3['a'].plot.hist(grid=False,histtype='bar', color = 'blue', edgecolor='black', xlim=(0.0,1.0), ylim=(0.0,70))
+
+
+Redoing the plots to the style "ggplot"
+print ('Done by Vera')
+df3['a'].plot.hist(grid=True, bins=25,color='pink',edgecolor='white', alpha=0.5, ylim=(0.0,35), xlim=(0.0,1.0))
+plt.style.use ('ggplot')
+
+building a boxplot
+print ('Done by Vera')
+df3.boxplot(column=['a','b'])
+
+creating an areaplot
+print ('Done by Vera')
+df3[0:31].plot.area(stacked = True, alpha=0.5)
